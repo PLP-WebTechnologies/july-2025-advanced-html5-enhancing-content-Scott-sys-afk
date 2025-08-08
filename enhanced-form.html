@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced HTML5 Form</title>
+    <style>
+        /* Basic styling for clarity and accessibility */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header, section, footer {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+        
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        form {
+            margin-top: 30px;
+        }
+        
+        fieldset {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        legend {
+            padding: 0 10px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+        }
+        
+        input[type="checkbox"], input[type="radio"] {
+            width: auto;
+            margin-right: 10px;
+        }
+        
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        button:hover {
+            background-color: #2980b9;
+        }
+        
+        .required:after {
+            content: " *";
+            color: #e74c3c;
+        }
+        
+        .error-message {
+            color: #e74c3c;
+            font-size: 0.9em;
+            margin-top: -10px;
+            margin-bottom: 15px;
+        }
+        
+        .media-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .media-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        
+        audio, video {
+            width: 100%;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HTML5 Form Demonstration</h1>
+        <p>Showcasing structured content and advanced form features</p>
+    </header>
+
+    <section id="content-demo">
+        <h2>Structured Content Examples</h2>
+        
+        <article>
+            <h3>Types of HTML Lists</h3>
+            
+            <h4>Unordered List (Features)</h4>
+            <ul>
+                <li>Semantic HTML5 markup</li>
+                <li>Accessible form design</li>
+                <li>Native validation without JavaScript</li>
+                <li>Responsive layout</li>
+            </ul>
+            
+            <h4>Ordered List (Steps)</h4>
+            <ol>
+                <li>Complete the personal information section</li>
+                <li>Fill in your account details</li>
+                <li>Select your preferences</li>
+                <li>Review and submit the form</li>
+            </ol>
+            
+            <h4>Definition List</h4>
+            <dl>
+                <dt>HTML5</dt>
+                <dd>The latest version of HyperText Markup Language</dd>
+                
+                <dt>Semantic Elements</dt>
+                <dd>HTML elements that clearly describe their meaning</dd>
+            </dl>
+        </article>
+        
+        <article>
+            <h3>Sample Data Table</h3>
+            <table>
+                <caption>Form Input Types Overview</caption>
+                <thead>
+                    <tr>
+                        <th>Input Type</th>
+                        <th>Purpose</th>
+                        <th>Validation Attributes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>text</td>
+                        <td>Single-line text input</td>
+                        <td>required, minlength, maxlength, pattern</td>
+                    </tr>
+                    <tr>
+                        <td>email</td>
+                        <td>Email address input</td>
+                        <td>required, pattern</td>
+                    </tr>
+                    <tr>
+                        <td>tel</td>
+                        <td>Telephone number input</td>
+                        <td>pattern</td>
+                    </tr>
+                    <tr>
+                        <td>date</td>
+                        <td>Date selection</td>
+                        <td>required, min, max</td>
+                    </tr>
+                    <tr>
+                        <td>number</td>
+                        <td>Numeric input</td>
+                        <td>required, min, max</td>
+                    </tr>
+                </tbody>
+            </table>
+        </article>
+        
+        <article>
+            <h3>Media Examples</h3>
+            <div class="media-container">
+                <figure>
+                    <img src="https://via.placeholder.com/800x400?text=Form+Design+Example" alt="Example form design illustration">
+                    <figcaption>Sample form layout</figcaption>
+                </figure>
+            </div>
+            
+            <div class="media-container">
+                <audio controls>
+                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <p>Sample audio content about form accessibility</p>
+            </div>
+        </article>
+    </section>
+
+    <section id="form-demo">
+        <h2>Complete HTML5 Form</h2>
+        
+        <form id="registrationForm" action="#" method="post" novalidate>
+            <fieldset>
+                <legend><span class="required">Personal Information</span></legend>
+                
+                <div>
+                    <label for="fullName" class="required">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" 
+                           required minlength="2" maxlength="50" autocomplete="name">
+                    <div class="error-message">Please enter your full name (2-50 characters)</div>
+                </div>
+                
+                <div>
+                    <label for="email" class="required">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="your.email@example.com" 
+                           required autocomplete="email">
+                    <div class="error-message">Please enter a valid email address</div>
+                </div>
+                
+                <div>
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="123-456-7890" 
+                           pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" autocomplete="tel">
+                    <div class="error-message">Format: 123-456-7890</div>
+                </div>
+                
+                <div>
+                    <label for="birthdate" class="required">Date of Birth</label>
+                    <input type="date" id="birthdate" name="birthdate" required 
+                           min="1900-01-01" max="2023-12-31">
+                    <div class="error-message">Please select a valid date</div>
+                </div>
+                
+                <div>
+                    <label for="age">Age (auto-calculated)</label>
+                    <input type="number" id="age" name="age" readonly>
+                </div>
+            </fieldset>
+            
+            <fieldset>
+                <legend><span class="required">Account Details</span></legend>
+                
+                <div>
+                    <label for="username" class="required">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Choose a username" 
+                           required minlength="4" maxlength="20" pattern="[A-Za-z0-9_]+" autocomplete="username">
+                    <div class="error-message">4-20 characters (letters, numbers, underscores only)</div>
+                </div>
+                
+                <div>
+                    <label for="password" class="required">Password</label>
+                    <input type="password" id="password" name="password" required 
+                           minlength="8" autocomplete="new-password">
+                    <div class="error-message">Minimum 8 characters required</div>
+                </div>
+                
+                <div>
+                    <label for="confirmPassword" class="required">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required 
+                           autocomplete="new-password">
+                    <div class="error-message">Passwords must match</div>
+                </div>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Preferences</legend>
+                
+                <div>
+                    <label for="country">Country</label>
+                    <select id="country" name="country" autocomplete="country">
+                        <option value="">Select your country</option>
+                        <option value="US">United States</option>
+                        <option value="CA">Canada</option>
+                        <option value="UK">United Kingdom</option>
+                        <option value="AU">Australia</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label>Newsletter Subscription</label>
+                    <div>
+                        <input type="radio" id="subscribeYes" name="newsletter" value="yes" checked>
+                        <label for="subscribeYes" style="display: inline; font-weight: normal;">Yes, please</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="subscribeNo" name="newsletter" value="no">
+                        <label for="subscribeNo" style="display: inline; font-weight: normal;">No, thanks</label>
+                    </div>
+                </div>
+                
+                <div>
+                    <label>Interests (select all that apply)</label>
+                    <div>
+                        <input type="checkbox" id="tech" name="interests" value="technology">
+                        <label for="tech" style="display: inline; font-weight: normal;">Technology</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="sports" name="interests" value="sports">
+                        <label for="sports" style="display: inline; font-weight: normal;">Sports</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="music" name="interests" value="music">
+                        <label for="music" style="display: inline; font-weight: normal;">Music</label>
+                    </div>
+                </div>
+                
+                <div>
+                    <label for="bio">Biography</label>
+                    <textarea id="bio" name="bio" rows="5" placeholder="Tell us about yourself..."></textarea>
+                </div>
+                
+                <div>
+                    <label for="avatar">Profile Picture</label>
+                    <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
+                </div>
+            </fieldset>
+            
+            <div>
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms" style="display: inline; font-weight: normal;">I agree to the <a href="#">terms and conditions</a></label>
+                <div class="error-message">You must accept the terms</div>
+            </div>
+            
+            <div style="margin-top: 20px;">
+                <button type="submit">Submit Form</button>
+                <button type="reset">Reset Form</button>
+            </div>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 HTML5 Form Demonstration. All rights reserved.</p>
+        <address>
+            Contact: <a href="mailto:info@example.com">info@example.com</a>
+        </address>
+    </footer>
+
+    <script>
+        // Age calculation from birthdate (not part of validation)
+        document.getElementById('birthdate').addEventListener('change', function() {
+            const birthDate = new Date(this.value);
+            const today = new Date();
+            let age = today.getFullYear() - birthDate.getFullYear();
+            const monthDiff = today.getMonth() - birthDate.getMonth();
+            
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+            
+            document.getElementById('age').value = age;
+        });
+    </script>
+</body>
+</html>
